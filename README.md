@@ -16,7 +16,7 @@ wget -O "checkpoints/mobilebert_ext.pt" "https://www.googleapis.com/drive/v3/fil
 ```
 
 ## Usage
-[![](https://img.shields.io/badge/Colab-Run_in_Google_Colab-blue?logo=Google&logoColor=FDBA18)](https://colab.research.google.com/drive/1hwpYC-AU6C_nwuM_N5ynOShXIRGv-U51#scrollTo=KizhzOxVOjaN)
+
 ```python
 import torch
 from models.model_builder import ExtSummarizer
