@@ -47,4 +47,3 @@ print(summary)
 ## References
 - [1] [PreSumm:  Text Summarization with Pretrained Encoders](https://github.com/nlpyang/PreSumm)
 - [2] [Extractive Summarization with BERT](https://github.com/chriskhanhtran/bert-extractive-summarization/)
-]
