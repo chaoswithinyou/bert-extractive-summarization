@@ -3,9 +3,8 @@ from models.model_builder import ExtSummarizer
 from ext_sum import summarize
 
 # Load model
-model_type = 'phobert'
-checkpoint = torch.load('/content/MODEL_PATH/model_step_50000.pt', map_location='cpu')
-model = ExtSummarizer(checkpoint=checkpoint, bert_type=model_type, device='cpu')
+checkpoint = torch.load('/content/drive/MyDrive/NLP/model_step_50000.pt', map_location='cpu')
+model = ExtSummarizer(checkpoint=checkpoint, device='cpu')
 
 # Run summarization
 input_fp = '/content/bert-extractive-summarization/raw_data/input.txt'
