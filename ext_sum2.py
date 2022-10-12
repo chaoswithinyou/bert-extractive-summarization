@@ -139,9 +139,9 @@ def test(model, input_data, result_path, max_length, block_trigram=True):
             sent_scores = sent_scores.cpu().data.numpy()
             #print(sent_scores)
             selected_ids = np.argsort(-sent_scores, 1)
-            #print(selected_ids)
+            print(selected_ids)
 
-            pred = []
+            _filter_id = []
             for i, idx in enumerate(selected_ids):
                 _pred = []
                 if len(src_str[i]) == 0:
@@ -153,17 +153,22 @@ def test(model, input_data, result_path, max_length, block_trigram=True):
                     if block_trigram:
                         if not _block_tri(candidate, _pred):
                             _pred.append(candidate)
+                            _filter_id.append(j)
                     else:
                         _pred.append(candidate)
+                        _filter_id.append(j)
 
                     if len(_pred) == max_length:
                         break
+            
 
-                _pred = " ".join(_pred)
-                pred.append(_pred)
+            pred = []
+            for i in sorted(_filter_id):
+                candidate = src_str[0][i].strip()
+                pred.append(candidate)
 
             for i in range(len(pred)):
-                save_pred.write(pred[i].strip() + "\n")
+                save_pred.write(pred[i].strip() + "\n\n")
 
 
 def summarize(raw_txt_fp, result_fp, model, max_length=3, max_pos=512, return_summary=True):
