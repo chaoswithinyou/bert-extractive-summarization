@@ -1,12 +1,12 @@
+import os
+cwd = os.getcwd()
 import torch
 from models.model_builder import ExtSummarizer
 from ext_sum2 import summarize
 import argparse
 from newsplease import NewsPlease
 import time
-import os
 
-cwd = os.getcwd()
 file_name_postfix = str(int(time.time()))
 
 input_fp = cwd+'/raw_data/input_'+file_name_postfix+'.txt'

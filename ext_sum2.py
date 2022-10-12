@@ -1,3 +1,5 @@
+import os
+cwd = os.getcwd()
 import time
 import numpy as np
 import torch
@@ -6,9 +8,7 @@ from transformers import AutoTokenizer
 from models.model_builder import ExtSummarizer
 import py_vncorenlp
 import collections
-import os
 
-cwd = os.getcwd()
 rdrsegmenter = py_vncorenlp.VnCoreNLP(annotators=["wseg"], save_dir=cwd+'/vncorenlp')
 from nltk import tokenize
 
@@ -31,7 +31,7 @@ def load_vocab():
     """Loads a vocabulary file into a dictionary."""
     vocab = collections.OrderedDict()
     index = 0
-    with open('/content/added_vocab.txt', "r", encoding="utf-8") as reader:
+    with open(cwd+'/added_vocab.txt', "r", encoding="utf-8") as reader:
         while True:
             token = reader.readline()
             if not token:
@@ -40,7 +40,7 @@ def load_vocab():
             token = token.split()
             vocab[token[0]] = index
             index += 1
-    with open('/content/vocab.txt', "r", encoding="utf-8") as reader:
+    with open(cwd+'/vocab.txt', "r", encoding="utf-8") as reader:
         while True:
             token = reader.readline()
             if not token:
