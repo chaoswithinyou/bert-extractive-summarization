@@ -32,9 +32,9 @@ model = ExtSummarizer(checkpoint=checkpoint, device='cpu')
 
 # Run summarization
 
-summary = summarize(input_fp, result_fp, model, max_length=3)
+summary = summarize(input_fp, result_fp, model, max_length=5)
 summary = summary.replace('_',' ')
-print(article.description+'\n'+summary)
+print('Description:\n\n'+article.description+'\n\nImportant sentences:'+'\n\n'+summary)
 
 try:
     os.remove(input_fp)
