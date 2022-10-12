@@ -6,10 +6,11 @@ from newsplease import NewsPlease
 import time
 import os
 
+cwd = os.getcwd()
 file_name_postfix = str(int(time.time()))
 
-input_fp = '/content/bert-extractive-summarization/raw_data/input_'+file_name_postfix+'.txt'
-result_fp = '/content/bert-extractive-summarization/results/summary_'+file_name_postfix+'.txt'
+input_fp = cwd+'/raw_data/input_'+file_name_postfix+'.txt'
+result_fp = cwd+'/results/summary_'+file_name_postfix+'.txt'
  
 # Initialize parser
 parser = argparse.ArgumentParser()
@@ -26,7 +27,7 @@ with open(input_fp, 'w') as f:
 
 # Load model
 model_type = 'phobert'
-checkpoint = torch.load('/content/drive/MyDrive/NLP/model_step_50000.pt', map_location='cpu')
+checkpoint = torch.load(cwd+'/model_step_50000.pt', map_location='cpu')
 model = ExtSummarizer(checkpoint=checkpoint, device='cpu')
 
 # Run summarization

@@ -6,8 +6,10 @@ from transformers import AutoTokenizer
 from models.model_builder import ExtSummarizer
 import py_vncorenlp
 import collections
+import os
 
-rdrsegmenter = py_vncorenlp.VnCoreNLP(annotators=["wseg"], save_dir='/content')
+cwd = os.getcwd()
+rdrsegmenter = py_vncorenlp.VnCoreNLP(annotators=["wseg"], save_dir=cwd)
 from nltk import tokenize
 
 
