@@ -17,7 +17,7 @@ class Bert(nn.Module):
         self.model.embeddings.token_type_embeddings.weight.data.normal_(mean=0.0, std=self.model.config.initializer_range)
 
     def forward(self, x, segs, mask):
-        top_vec, _ = self.model(x, attention_mask=mask, token_type_ids=segs)
+        top_vec = self.model(x, attention_mask=mask, token_type_ids=segs).last_hidden_state
         return top_vec
 
 
