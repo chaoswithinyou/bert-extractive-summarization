@@ -5,7 +5,6 @@ import os
 cwd = os.getcwd()
 nltk.download('punkt')
 
-os.system('git clone https://github.com/chaoswithinyou/bert-extractive-summarization')
 os.system('pip3 install -r /content/bert-extractive-summarization/req.txt')
 
 import py_vncorenlp
