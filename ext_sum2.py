@@ -9,7 +9,7 @@ import collections
 import os
 
 cwd = os.getcwd()
-rdrsegmenter = py_vncorenlp.VnCoreNLP(annotators=["wseg"], save_dir=cwd)
+rdrsegmenter = py_vncorenlp.VnCoreNLP(annotators=["wseg"], save_dir=cwd+'/vncorenlp')
 from nltk import tokenize
 
 

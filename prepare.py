@@ -5,10 +5,13 @@ import os
 cwd = os.getcwd()
 nltk.download('punkt')
 
-os.system('pip3 install -r /content/bert-extractive-summarization/req.txt')
+os.system('mkdir vncorenlp')
+install_req = 'pip3 install -r '+cwd+'/req.txt'
+os.system(install_req)
 
 import py_vncorenlp
-py_vncorenlp.download_model(save_dir=cwd)
+import gdown
+py_vncorenlp.download_model(save_dir=cwd+'/vncorenlp')
 
 
 os.system('wget https://huggingface.co/vinai/phobert-base/raw/main/vocab.txt')
