@@ -6,12 +6,12 @@ import torch
 #from nltk.tokenize import sent_tokenize
 from models.model_builder import ExtSummarizer
 import collections
-from nltk import tokenize
+#from nltk import tokenize
 
 
 
 def preprocess(raw_sents):
-    substring = 'Ảnh :'
+    substring = 'Ảnh'
     fil_sents = []
     for sent in raw_sents:
         if substring not in sent:
@@ -69,8 +69,8 @@ def load_text(sents, max_pos, device):
         #src_subtokens = ["[CLS]"] + src_subtokens + ["[SEP]"]
         src_subtoken_idxs = []
         for sent in raw:
-            sent_tokens = tokenize.word_tokenize(sent)
-            for token in sent_tokens:
+            #sent_tokens = tokenize.word_tokenize(sent)
+            for token in sent:
                 try:
                     src_subtoken_idxs.append(token2idx[token])
                 except Exception:
