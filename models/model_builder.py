@@ -22,7 +22,7 @@ class Bert(nn.Module):
 
 
 class ExtSummarizer(nn.Module):
-    def __init__(self, device, checkpoint=None, max_pos=512):
+    def __init__(self, device, checkpoint=None, max_pos=1024):
         super().__init__()
         self.device = device
         self.bert = Bert()

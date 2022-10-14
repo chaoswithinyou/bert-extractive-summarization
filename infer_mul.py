@@ -7,8 +7,8 @@ from tqdm  import tqdm
 import jsonlines
 
 # Load model
-checkpoint = torch.load(cwd+'/model_final.pt', map_location='gpu')
-model = ExtSummarizer(checkpoint=checkpoint, device='gpu')
+checkpoint = torch.load(cwd+'/model_final.pt', map_location='cuda:0')
+model = ExtSummarizer(checkpoint=checkpoint, device='cuda:0')
 
 sent_ids = []
 # read file

@@ -120,6 +120,6 @@ def test(model, input_data, top_n, block_trigram=True):
 def summarize(raw_sents, model, top_n=10, max_pos=1024):
     model.eval()
     processed_text, full_length = preprocess(raw_sents)
-    input_data = load_text(processed_text, max_pos, device="cpu")
+    input_data = load_text(processed_text, max_pos, device="cuda:0")
     return test(model, input_data, top_n, block_trigram=True)
         
