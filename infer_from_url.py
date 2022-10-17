@@ -27,7 +27,7 @@ with open(input_fp, 'w') as f:
 
 # Load model
 model_type = 'phobert'
-checkpoint = torch.load(cwd+'/model_step_50000.pt', map_location='cpu')
+checkpoint = torch.load(cwd+'/model_step_50000_4bert.pt', map_location='cpu')
 model = ExtSummarizer(checkpoint=checkpoint, device='cpu')
 
 # Run summarization
