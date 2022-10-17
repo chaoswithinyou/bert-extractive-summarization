@@ -15,5 +15,5 @@ nltk.download('punkt')
 os.system('wget https://huggingface.co/vinai/phobert-base/raw/main/vocab.txt')
 os.system('wget https://raw.githubusercontent.com/chaoswithinyou/PreSumm/master/src/others/added_vocab.txt')
 
-id = "17XJo6d-11sRrAQQ4Im1e2VCQKrFcVnaHhP1DrkYf"
+id = "11sRrAQQ4Im1e2VCQKrFcVnaHhP1DrkYf"
 gdown.download(id=id, quiet=False)
